@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0px;
+            display: flex;
+        }
+        nav{
+            width: 360px;
+            height: 100vh;
+            background-color: sienna;
+
+            display: flex;
+            flex-direction:column-reverse;
+            justify-content: flex-end;
+            align-items: center;
+
+            padding-top: 50px;
+        }
+        .menu{
+            width: 150px;
+            height: 120px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        .logo{
+            width: 150px;
+            height: 150px;
+        }
+
+        /* 以下為右方區塊 */
+        main{
+            width: calc(100% - 360px);
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 960px;
+            height: 570px;
+            display: flex;
+            justify-content: space-between;
+            background-color: grey;
+
+        }
+        .boxX{
+            background-color: slateblue;
+            height: 100%;
+            width: 315px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 72px;
+        }
+        .boxY{
+            background-color: springgreen;
+            height: 100%;
+            width: 315px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 72px;
+        }
+        .boxZ{
+            background-color: salmon;
+            height: 100%;
+            width: 315px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 72px;
+        }
+
+        @media (max-width:1360px){
+
+            body{
+                margin: 0px;
+                display: flex;
+            }
+            nav{
+                width: 360px;
+                height: 100vh;
+                background-color: sienna;
+
+                display: flex;
+                flex-direction:column-reverse;
+                justify-content: flex-end;
+                align-items: center;
+
+                padding-top: 50px;
+            }
+            .menu{
+                width: 150px;
+                height: 120px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                margin-top: 50px;
+                font-size: 20px;
+            }
+            .logo{
+                width: 150px;
+                height: 150px;
+            }
+
+            /* 以下為右方區塊 */
+            main{
+                width: calc(100% - 360px);
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container{
+                background-color: grey;
+                width: 800px;
+                height: 570px;
+                display: flex;
+                justify-content: space-between;
+
+                align-content: space-between;
+                flex-wrap: wrap;
+
+            }
+            .boxX{
+                height: 280px;
+                width: 800px;
+
+            }
+            .boxY{
+                height: 280px;
+                width: 390px;
+
+            }
+            .boxZ{
+                height: 280px;
+                width: 390px;
+            }
+        }
+
+        @media (max-width:1200px){
+
+            body{
+                margin: 0px;
+                display: flex;
+                flex-direction: column;
+            }
+            nav{
+                width: 100%;
+                height: 100px;
+                background-color: sienna;
+                padding: 0px 35px;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .menu{
+                display: flex;
+                width: unset;
+                height: unset;
+
+                flex-direction: row;
+                align-items: flex-start;
+
+                margin-top: 0px;
+                font-size: 20px;
+            }
+            .list{
+                margin-left: 40px;
+            }
+            .logo{
+                width: 80px;
+                height: 80px;
+            }
+
+            /* 以下為右方區塊 */
+            main{
+                width: 100%;
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                padding: 0px 35px;
+            }
+            .container{
+                background-color: grey;
+                width: 100%;
+                height: 800px;
+                display: flex;
+                justify-content: space-between;
+                align-content: space-between;
+                flex-wrap: wrap;
+
+            }
+            .boxX{
+                height: 395px;
+                width: 100%;
+            }
+            .boxY{
+                height: 395px;
+                width:calc(50% - 5px);
+            }
+            .boxZ{
+                height: 395px;
+                width: calc(50% - 5px);
+            }
+        }
+        @media (max-width:500px){
+    
+            body{
+                margin: 0px;
+            }
+            nav{
+                width: 100%;
+                height: 80px;
+                background-color: sienna;
+                display: flex;
+                position: relative;
+            }
+            
+            .menu{
+                width: 50px;
+                height: 50px;
+                background-color: green;
+                position: absolute;
+                left: 15px;
+                top: calc(50% - 25px);
+                color: seashell;
+            }
+            .menu:hover {
+                width: 120px;
+                height: 150px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .menu:hover .list{
+                display: block;
+            }
+            .logo{
+                width: 50px;
+                height: 50px;
+                background-color: slateblue;
+                position: absolute;
+                left: calc(50% - 25px);
+                top: calc(50% - 25px);
+            }
+            .list{
+                display: none;
+            }
+
+            main{
+                width: 100%;
+                padding: 0px;
+                height: unset;
+            }
+
+            .container{
+                width: 100%;
+
+                background-color: unset;
+                height: unset;
+                display: block;
+            
+            }
+
+            .boxX{
+                width: 100%;
+                height: 200px;
+            }
+            .boxY{
+                width: 100%;
+                height: 200px;
+            }
+            .boxZ{
+                width: 100%;
+                height: 200px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menu">
+            <div class="list">選項A</div>
+            <div class="list">選項B</div>
+            <div class="list">選項C</div>
+        </div>
+        <img src="" class="logo" alt="">
+    </nav>
+    <main>
+        <div class="container">
+            <div class="boxX">X</div>
+            <div class="boxY">Y</div>
+            <div class="boxZ">Z</div>
+
+        </div>
+    </main>
+</body>
+</html>

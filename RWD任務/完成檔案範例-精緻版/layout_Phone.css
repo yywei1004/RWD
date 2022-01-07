@@ -1,0 +1,87 @@
+@media (max-width: 768px) {
+  .nav {
+    height: 80px;
+    justify-content: center;
+    flex-direction: row-reverse;
+    justify-content: center;
+    position: relative;
+  }
+  .nav__collapse-btn {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  /* 
+    如何使用純 CSS 做出開啟選單的效果？ 
+  
+    以 :hover A 元素　→　開啟 B 元素為例：
+    如果以 display: none 隱藏 B 元素並在 A:hover 元素下 display: block，會導致離開 A:hover 狀態時立即關閉 B 元素的顯示，原因是 display 的切換之間無法以 transition 過渡，所以必須在 B 元素上預設使用 display: block 並以 opacity 配合 z-index 暫時隱藏 B 元素，並在 A:hover 狀態時改變 z-index 與 opacity 使其顯示
+  
+    如何延遲關閉選單的時間？
+  
+    transition-delay 可以延遲元素執行過渡動化的時間
+    */
+  /* .menu:hover 可以在滑鼠移動到選單上後延遲開啟狀態 */
+  .nav__collapse-btn {
+    transition: transform 0.4s ease-out 0.5s;
+  }
+  .nav__collapse-btn:hover ~ .menu,
+  .menu:hover {
+    z-index: 999;
+    opacity: 1;
+    transition-delay: 0.4s;
+  }
+  .menu:hover ~ .nav__collapse-btn {
+    /* 這邊是否可以讓滑鼠懸停在 .menu 時，繼續保持.nav__collapse-btn rotate(180deg) 的效果？ */
+    /* 此寫法不可解的原因為雖然 ~ 可以選擇同層的元素，但 ~ 後方的元素順序必須位於前方元素下方 */
+  }
+  .nav__collapse-btn:hover,
+  .menu:hover ~ .nav__collapse-btn {
+    transform: rotate(180deg);
+    transition: transform 0.4s ease-in;
+  }
+  .menu {
+    position: fixed;
+    flex-direction: column;
+    background-color: var(--main);
+    top: 100px;
+    right: 20px;
+    z-index: -999;
+    border-radius: 50px 10px;
+    padding: 15px;
+    opacity: 0;
+    /* 
+      離開 :hover 狀態時延遲 .menu 過場的時間
+      是否需考量版面切換之間短暫出現的問題？
+      */
+    transition: all 0s linear 0.5s;
+  }
+  .menu__menu-link:first-child {
+    border-radius: 40px 10px 10px 10px;
+  }
+  .menu__menu-link:last-child {
+    border-radius: 10px 10px 40px 10px;
+  }
+  .logo {
+    height: 60px;
+    width: 60px;
+  }
+  .banner-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+  .banner-wrapper__banner {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
+  .banner-wrapper__banner.grass,
+  .banner-wrapper__banner.fire,
+  .banner-wrapper__banner.water {
+    margin: 0;
+    border-radius: 0;
+  }
+}

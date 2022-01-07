@@ -1,0 +1,60 @@
+/* --- 排版 --- */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+}
+.nav {
+  width: 366px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+  flex-shrink: 0;
+}
+.nav__collapse-btn {
+  display: none;
+}
+.logo {
+  /* 
+    寬度降低後的壓縮問題
+  
+    flex-shrink: 1 可以避免壓縮，但會擠壓下方 .menu 空間
+    最佳化方向：使 .logo 可以等比例縮放
+    */
+  width: 150px;
+  height: 150px;
+  margin-bottom: 70px;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu__menu-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  /* 使 .container 填滿剩餘區塊 */
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-wrapper {
+  width: 900px;
+  height: 80%;
+  display: flex;
+}
+
+.banner-wrapper__banner {
+  flex-grow: 1;
+  border-radius: 10px 50px;
+}
+.banner-wrapper__banner.grass,
+.banner-wrapper__banner.fire {
+  /* 10px 會在右邊留下空白 */
+  margin-right: 12px;
+}

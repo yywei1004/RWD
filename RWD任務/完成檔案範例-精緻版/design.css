@@ -1,0 +1,157 @@
+/* --- 設計 --- */
+
+:root {
+  --main: rgb(251, 228, 127);
+  --secondary: #705424;
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+body {
+  background-color: snow;
+}
+
+.nav {
+  background-color: var(--main);
+  box-shadow: 0px 0px 10px 1px var(--secondary);
+}
+.nav__collapse-btn {
+  background-image: url(https://www.pokemon.co.jp/ex/sun_moon/common/images/icons/pokeball.png);
+}
+.logo {
+  background-image: url(https://zukan.pokemon.co.jp/zukan-api/up/images/index/5bb0cfd44302cd4df0c0c88d37457931.png);
+}
+.logo,
+.nav__collapse-btn {
+  background-color: snow;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 1px var(--secondary);
+}
+.logo,
+.banner-wrapper__banner,
+.nav__collapse-btn {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.menu__menu-link {
+  text-decoration: none;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+.menu__menu-link:hover {
+  color: snow;
+  background-color: var(--secondary);
+}
+.menu__menu-link::before {
+  background: url(https://i.imgur.com/HgqkOXu.png) 9999px 9999px no-repeat;
+  display: block;
+  width: 68px;
+  height: 56px;
+  content: "";
+}
+.menu__menu-link.grass::before {
+  background-position: -136px 0;
+}
+.menu__menu-link.fire::before {
+  background-position: -408px 0;
+}
+.menu__menu-link.water::before {
+  background-position: -816px 0;
+}
+.banner-wrapper__banner {
+  padding: 20px;
+  transition: all 0.5s ease;
+  opacity: 0.5;
+  border: 3px solid transparent;
+  box-shadow: 5px 5px 10px 1px var(--secondary);
+  display: flex;
+  justify-content: space-between;
+}
+.banner-wrapper__banner:hover {
+  opacity: 1;
+  /* border: 3px solid var(--main); */
+  animation: blinkingBorder 1s infinite;
+}
+@keyframes blinkingBorder {
+  0% {
+    border: 3px solid var(--main);
+  }
+  50% {
+    border: 3px solid transparent;
+  }
+  100% {
+    border: 3px solid var(--main);
+  }
+}
+.banner-wrapper__banner::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  display: block;
+  background-size: cover;
+}
+.banner-wrapper__banner::after {
+  align-self: flex-end;
+}
+.banner-wrapper__banner.grass {
+  background-color: rgb(38, 172, 137);
+  background-image: url(https://zukan.pokemon.co.jp/zukan-api/up/images/index/7b705082db2e24dd4ba25166dac84e0a.png);
+}
+.banner-wrapper__banner.grass:hover {
+  background-image: url(https://zukan.pokemon.co.jp/zukan-api/up/images/index/ebccfe6f2ccfe2e851fd29739bf6220c.png);
+}
+.banner-wrapper__banner.grass::before {
+  background-image: url(https://zukan.pokemon.co.jp/img/icon_type_4_on.svg);
+}
+.banner-wrapper__banner.grass::after {
+  content: "フシギダネ";
+}
+.banner-wrapper__banner.grass:hover::after {
+  content: "フシギバナ";
+}
+.banner-wrapper__banner::after {
+  align-self: flex-end;
+  color: snow;
+}
+.banner-wrapper__banner.fire {
+  background-color: rgb(235, 91, 73);
+  background-image: url(https://zukan.pokemon.co.jp/zukan-api/up/images/index/89953014f442146518ef45787d9bb0a4.png);
+}
+.banner-wrapper__banner.fire:hover {
+  background-image: url(https://zukan.pokemon.co.jp/zukan-api/up/images/index/42062cbeca16839af3efe8a7d61ceb27a30f758b.png);
+}
+.banner-wrapper__banner.fire::before {
+  background-image: url(https://zukan.pokemon.co.jp/img/icon_type_2_on.svg);
+}
+/* 此處的 content 如果變化前後字數增加則會改變容器寬度 */
+/* 此情況下也許須將父層容器設為固定寬度，而非 flex-grow: 1 */
+.banner-wrapper__banner.fire::after {
+  content: "　ヒトカゲ";
+}
+.banner-wrapper__banner.fire:hover::after {
+  content: "リザードン";
+}
+.banner-wrapper__banner.water {
+  background-color: rgb(77, 117, 186);
+  background-image: url(https://zukan.pokemon.co.jp/zukan-api/up/images/index/17388b7f608671656716ab509ee0fa05.png);
+}
+.banner-wrapper__banner.water:hover {
+  background-image: url(https://zukan.pokemon.co.jp/zukan-api/up/images/index/81d2cf3830b75053da5b39dc22aa9a27.png);
+}
+.banner-wrapper__banner.water::before {
+  background-image: url(https://zukan.pokemon.co.jp/img/icon_type_3_on.svg);
+}
+.banner-wrapper__banner.water::after {
+  content: "　ゼニガメ";
+}
+.banner-wrapper__banner.water:hover::after {
+  content: "カメックス";
+}

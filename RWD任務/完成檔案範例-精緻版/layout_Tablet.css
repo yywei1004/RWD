@@ -1,0 +1,29 @@
+@media (max-width: 1166px) {
+  body {
+    flex-direction: column;
+  }
+  .nav {
+    height: 100px;
+    width: 100%;
+    padding-top: 0;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+  }
+  .menu__menu-link {
+    margin-bottom: 0;
+    flex-direction: row;
+    padding-right: 40px;
+  }
+  .logo {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 0;
+  }
+  .menu {
+    flex-direction: row;
+  }
+  .banner-wrapper {
+    width: 700px;
+  }
+}
